@@ -1,0 +1,32 @@
+{%  extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" type="text/css" media="screen" href="{{ asset('css/home.css') }}" />
+{% endblock %}
+{% block header %}
+    <header class="home-header">
+        <div class="sky-area"></div>
+        <div class="sand-area"></div>
+        <div class="tree-trunk"></div>
+
+        <div class="tree-head">
+            <img class="img-sized text-anim" src="{{ asset('images/coresite/agileCodeTxt.png') }}" alt="text image" />
+            <img class="img-sized flower-anim" src="{{ asset('images/coresite/pinkFlower.png') }}" alt="kind of flower image" />
+        </div>
+        <div class="rocket-div">
+            <img class="rocket-img" src="{{ asset('images/coresite/rocket.png') }}" alt="rocket image" />
+        </div>
+        <div class="rocket-body-div">
+            <img class="rocket-body-img" src="{{ asset('images/coresite/rocketBody.png') }}" alt="rocket image" />
+        </div>
+        <div class="cloud1-div">
+            <img class="cloud1-img" src="{{ asset('images/coresite/cloud1.png') }}" alt="cloud image" />
+        </div>
+    </header>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('js/home.js') }}"></script>
+{% endblock %}

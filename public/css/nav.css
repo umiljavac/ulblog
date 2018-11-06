@@ -1,0 +1,15 @@
+#main-nav {
+    border: none;
+}
+
+.logo-img {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 5px;
+}
+
+.navbar-toggle {
+    padding: 6px 10px !important;
+    color: snow;
+}

@@ -1,0 +1,40 @@
+easy_admin:
+    entities:
+        Project:
+            class: App\Entity\Project
+            form:
+                fields:
+                    - 'title'
+                    - 'shortDescription'
+                    - 'gitHub'
+                    - 'submited'
+                    - 'content'
+                    - { property: 'mainImageFile', type: 'vich_image' }
+                    - 'mainImageAlt'
+                    - 'mainImageDescription'
+                    - { property: 'images', type: 'collection', type_options: { entry_type: 'App\Form\Type\ImageType', by_reference: false } }
+                    - { property: 'category', type: 'easyadmin_autocomplete', type_options: { class: 'App\Entity\Category'} }
+                    - { property: 'tags', type: 'easyadmin_autocomplete', type_options: { class: 'App\Entity\Tag' } }
+                    - { property: 'technos', type: 'easyadmin_autocomplete' }
+
+            list:
+                actions: ['show']
+                fields:
+                    - 'title'
+                    - 'submited'
+                    - { property: 'mainImage', type: 'image', base_path: '%app.path.project_images%'}
+
+            show:
+                fields:
+                    - 'title'
+                    - 'shortDescription'
+                    - 'gitHub'
+                    - 'submited'
+                    - 'content'
+                    - 'category'
+                    - { property: 'mainImage', type: 'image', base_path: '%app.path.project_images%'}
+                    - 'mainImageAlt'
+                    - 'mainImageDescription'
+                    - { property: 'images', template: 'easyAdmin/project/imagesCollection.html.twig' }
+                    - { property: 'tags', template: 'easyAdmin/project/tagsCollection.html.twig' }
+                    - { property: 'technos', template: 'easyAdmin/project/technosCollection.html.twig' }

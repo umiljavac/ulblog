@@ -1,0 +1,3 @@
+{% for image in value %}
+    <img class="img-responsive" src= "{{ asset('images/projects/' ~ image.image)}}" alt="{{ image.alt }}">
+{% endfor %}

@@ -1,0 +1,9 @@
+easy_admin:
+    entities:
+        Category:
+            class: App\Entity\Category
+            form:
+                fields: ['name', 'cssClass']
+
+            list:
+                fields: ['name', 'cssClass']

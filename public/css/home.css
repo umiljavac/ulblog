@@ -1,0 +1,376 @@
+.home-header {
+    width: 100vw;
+    height: 100vh;
+    padding-top: -50px;
+    position: relative;
+    background: #4be1d2;
+}
+
+.sky-area, .sand-area, .tree-head, .tree-trunk, .flower-anim, .rocket-div, .rocket-body-div {
+    position: absolute;
+}
+
+.sky-area, .sand-area {
+    width: 100vw;
+    height: 40vh;
+    z-index: 0;
+}
+
+.sky-area {
+    top: 0;
+    background-color: #69b4d2;
+}
+
+.sand-area {
+    top: 60vh;
+    background-color: rgb(250, 250, 210);
+}
+
+.tree-head {
+    top: 10%;
+    left: 5%;
+    z-index: 1;
+}
+
+.tree-trunk {
+    bottom: 0;
+    background-color: #222;
+    z-index: 0;
+    border-radius: 10px 10px 0 0;
+}
+
+.img-sized {
+    width: 50vw;
+    height: 100%;
+}
+
+.flower-anim {
+    left: 0;
+    top: 0;
+    animation: 10s linear infinite rotateLogo;
+    -webkit-animation: 10s linear infinite rotateLogo;
+}
+
+.text-anim {
+    animation: 30s linear infinite rotateLogo;
+    -webkit-animation: 30s linear infinite rotateLogo;
+}
+
+.rocket-body-div, .rocket-div {
+    bottom: 0;
+    right: 1%;
+}
+
+.rocket-div {
+    z-index: 2;
+    animation : 6s 1s ease-in forwards animRocket;
+    -webkit-animation: 6s 1s ease-in forwards animRocket;
+}
+
+.rocket-body-div {
+    z-index: 1;
+    animation : 6s 1s ease-in forwards animRocketBody;
+    -webkit-animation: 6s 1s ease-in forwards animRocketBody;
+
+}
+
+.rocket-img, .rocket-body-img {
+    width: 40vw;
+    height: 100%;
+    max-width: 800px;
+}
+
+.cloud1-div {
+    position: absolute;
+    right: -10%;
+    top: 5vh;
+    animation: 30s linear infinite alternate animCloud;
+    -webkit-animation: 30s linear infinite alternate animCloud;
+}
+
+.cloud1-img {
+    width: 20vw;
+    height: 100%;
+    max-width: 300px;
+}
+
+@media (max-width: 700px) {
+    .cloud1-div {
+        top: 10vh;
+    }
+    .cloud1-img {
+        width: 20vh;
+    }
+}
+
+@media (min-width: 800px) {
+    .img-sized {
+        width: 60vh;
+    }
+}
+
+@media (min-width: 1300px) {
+    .rocket-body-div {
+        animation: 6s 1s ease-in forwards animRocketBodyMaxScreenWidth;
+        -webkit-animation: 6s 1s ease-in forwards animRocketBodyMaxScreenWidth;
+    }
+
+    .rocket-div {
+        animation: 6s 1s ease-in forwards animRocketMaxScreenWidth;
+        -webkit-animation: 6s 1s ease-in forwards animRocketMaxScreenWidth;
+    }
+}
+
+@keyframes left-arm-animation{
+    from {
+        transform: rotate(0deg)
+    }
+    to {
+        transform: rotate(40deg)
+    }
+}
+
+@-webkit-keyframes left-arm-animation{
+    from {
+        transform: rotate(0deg)
+    }
+    to {
+        transform: rotate(40deg)
+    }
+}
+
+@keyframes rotateLogo {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes rotateLogo {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes animRocket {
+    0% {
+        bottom: 0;
+    }
+    50% {
+        bottom: 2000px;
+    }
+    75% {
+        transform: rotate(5deg);
+        right: 10%;
+    }
+    80% {
+        transform: rotate(-180deg);
+    }
+    99.99% {
+        opacity: 1;
+    }
+    100% {
+        bottom: 10px;
+        transform: rotate(-180deg);
+        right: 1%;
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes animRocket {
+    0% {
+        bottom: 0;
+    }
+    50% {
+        bottom: 2000px;
+    }
+    75% {
+        transform: rotate(5deg);
+        right: 10%;
+    }
+    80% {
+        transform: rotate(-180deg);
+    }
+    99.99% {
+        opacity: 1;
+    }
+    100% {
+        bottom: 10px;
+        transform: rotate(-180deg);
+        right: 1%;
+        opacity: 0;
+    }
+}
+
+@keyframes animRocketBody {
+    0% {
+        bottom: 0;
+    }
+    50% {
+        bottom: 2000px;
+    }
+    75% {
+        transform: rotate(5deg);
+        right: 10%;
+    }
+    80% {
+        transform: rotate(-180deg);
+    }
+    99.99% {
+        opacity: 1;
+    }
+    100% {
+        bottom: 10px;
+        transform: rotate(-180deg);
+        right: 1%;
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes animRocketBody {
+    0% {
+        bottom: 0;
+    }
+    50% {
+        bottom: 2000px;
+    }
+    75% {
+        transform: rotate(5deg);
+        right: 10%;
+    }
+    80% {
+        transform: rotate(-180deg);
+    }
+    99.99% {
+        opacity: 1;
+    }
+    100% {
+        bottom: 10px;
+        transform: rotate(-180deg);
+        right: 1%;
+        opacity: 1;
+    }
+}
+
+@keyframes animRocketMaxScreenWidth {
+    0% {
+        bottom: 0;
+    }
+    50% {
+        bottom: 2500px;
+    }
+    75% {
+        transform: rotate(5deg);
+        right: 10%;
+    }
+    80% {
+        transform: rotate(-180deg);
+    }
+    99.99% {
+        opacity: 1;
+    }
+    100% {
+        bottom: -100px;
+        transform: rotate(-180deg);
+        right: 1%;
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes animRocketMaxScreenWidth {
+    0% {
+        bottom: 0;
+    }
+    50% {
+        bottom: 2500px;
+    }
+    75% {
+        transform: rotate(5deg);
+        right: 10%;
+    }
+    80% {
+        transform: rotate(-180deg);
+    }
+    99.99% {
+        opacity: 1;
+    }
+    100% {
+        bottom: -100px;
+        transform: rotate(-180deg);
+        right: 1%;
+        opacity: 0;
+    }
+}
+
+@keyframes animRocketBodyMaxScreenWidth {
+    0% {
+        bottom: 0;
+    }
+    50% {
+        bottom: 2500px;
+    }
+    75% {
+        transform: rotate(5deg);
+        right: 10%;
+    }
+    80% {
+        transform: rotate(-180deg);
+    }
+    99.99% {
+        opacity: 1;
+    }
+    100% {
+        bottom: -100px;
+        transform: rotate(-180deg);
+        right: 1%;
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes animRocketBodyMaxScreenWidth {
+    0% {
+        bottom: 0;
+    }
+    50% {
+        bottom: 2500px;
+    }
+    75% {
+        transform: rotate(5deg);
+        right: 10%;
+    }
+    80% {
+        transform: rotate(-180deg);
+    }
+    99.99% {
+        opacity: 1;
+    }
+    100% {
+        bottom: -100px;
+        transform: rotate(-180deg);
+        right: 1%;
+        opacity: 1;
+    }
+}
+
+@keyframes animCloud {
+    from {
+        right: -10%;
+    }
+    to {
+        right: 102%;
+    }
+}
+
+@-webkit-keyframes animCloud {
+    from {
+        right: -10%;
+    }
+    to {
+        right: 102%;
+    }
+}
