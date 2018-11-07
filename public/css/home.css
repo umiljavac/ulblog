@@ -29,13 +29,13 @@
 .tree-head {
     top: 10%;
     left: 5%;
-    z-index: 1;
+    z-index: 2;
 }
 
 .tree-trunk {
     bottom: 0;
     background-color: #222;
-    z-index: 0;
+    z-index: 1;
     border-radius: 10px 10px 0 0;
 }
 
@@ -62,16 +62,15 @@
 }
 
 .rocket-div {
-    z-index: 2;
+    z-index: 5;
     animation : 6s 1s ease-in forwards animRocket;
     -webkit-animation: 6s 1s ease-in forwards animRocket;
 }
 
 .rocket-body-div {
-    z-index: 1;
+    z-index: 4;
     animation : 6s 1s ease-in forwards animRocketBody;
     -webkit-animation: 6s 1s ease-in forwards animRocketBody;
-
 }
 
 .rocket-img, .rocket-body-img {
@@ -82,16 +81,19 @@
 
 .cloud1-div {
     position: absolute;
+    z-index: 1;
     right: -10%;
     top: 5vh;
     animation: 30s linear infinite alternate animCloud;
     -webkit-animation: 30s linear infinite alternate animCloud;
+    opacity: 1;
 }
 
 .cloud1-img {
     width: 20vw;
     height: 100%;
     max-width: 300px;
+    opacity: 1;
 }
 
 @media (max-width: 700px) {
@@ -160,6 +162,7 @@
 @keyframes animRocket {
     0% {
         bottom: 0;
+        opacity: 1;
     }
     50% {
         bottom: 2000px;
