@@ -125,24 +125,6 @@
     }
 }
 
-@keyframes left-arm-animation{
-    from {
-        transform: rotate(0deg)
-    }
-    to {
-        transform: rotate(40deg)
-    }
-}
-
-@-webkit-keyframes left-arm-animation{
-    from {
-        transform: rotate(0deg)
-    }
-    to {
-        transform: rotate(40deg)
-    }
-}
-
 @keyframes rotateLogo {
     from {
         transform: rotate(0deg);

@@ -22,17 +22,51 @@ font-family: 'Days One', sans-serif;
     padding: 6px 10px !important;
 }
 
-.navbar-right li a {
+.navbar-nav > li > a {
     color: #222222 !important;
-    margin: 0!important;
+    /* remove if no icons */
+    padding-top: 10px !important;
+    padding-bottom: 5px !important;
 }
 
-.navbar-right li a:hover {
-    color: lightseagreen !important;
+@media (min-width: 768px) {
+    .navbar-nav > li > a:hover {
+        animation: scaleLogo 0.4s linear forwards;
+    }
+}
+
+@media (max-width: 768px) {
+    .img-nav:hover {
+        animation: scaleLogo 0.4s linear forwards;
+    }
 }
 
 .img-nav {
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
 }
+
+.img-nav:hover {
+}
+
+@keyframes rotateLogo {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes scaleLogo {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.4);
+    }
+}
+
+
+
 

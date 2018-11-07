@@ -11,18 +11,15 @@ class HeaderDiv {
     }
 
     init() {
-        console.log(this.treeTrunk);
-
-        // Ugly Part.. Chrome/Opera strangely choose to load image or not without this.
+        // Ugly Part.. Chrome/Opera choose to load image or not without this.
         this.rocket.style.display = 'block';
         this.rocketBody.style.display = 'block';
         this.cloud.style.display = 'block';
         this.treeHead.style.display = 'block';
         this.textAnim.style.display = 'inline';
         this.flowerAnim.style.display = 'inline';
-        
-        this.placeTreeTrunk();
 
+        this.placeTreeTrunk();
     }
 
     getWidth(elt) {
