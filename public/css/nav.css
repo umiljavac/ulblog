@@ -1,5 +1,14 @@
+/**********
+font-family: 'Roboto Mono', monospace;
+font-family: 'Cabin Sketch', cursive;
+font-family: 'Days One', sans-serif;
+
+
+*************/
+
 #main-nav {
     border: none;
+    font-family: 'Helvetica Neue', sans-serif;
 }
 
 .logo-img {
@@ -12,3 +21,18 @@
 .navbar-toggle {
     padding: 6px 10px !important;
 }
+
+.navbar-right li a {
+    color: #222222 !important;
+    margin: 0!important;
+}
+
+.navbar-right li a:hover {
+    color: lightseagreen !important;
+}
+
+.img-nav {
+    width: 20px;
+    height: 20px;
+}
+

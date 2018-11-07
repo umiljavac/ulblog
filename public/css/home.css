@@ -6,7 +6,7 @@
     background: #4be1d2;
 }
 
-.sky-area, .sand-area, .tree-head, .tree-trunk, .flower-anim, .rocket-div, .rocket-body-div {
+.sky-area, .sand-area, .tree-head, #tree-trunk, .flower-anim, .rocket-div, .rocket-body-div {
     position: absolute;
 }
 
@@ -32,7 +32,7 @@
     z-index: 2;
 }
 
-.tree-trunk {
+#tree-trunk {
     bottom: 0;
     background-color: #222;
     z-index: 1;
@@ -45,6 +45,7 @@
 }
 
 .flower-anim {
+    display: none;
     left: 0;
     top: 0;
     animation: 10s linear infinite rotateLogo;
@@ -52,6 +53,7 @@
 }
 
 .text-anim {
+    display: none;
     animation: 30s linear infinite rotateLogo;
     -webkit-animation: 30s linear infinite rotateLogo;
 }

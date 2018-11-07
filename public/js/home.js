@@ -2,18 +2,27 @@ class HeaderDiv {
     constructor() {
         this.mainDiv = document.querySelector(".home-header");
         this.treeHead = document.querySelector(".tree-head");
-        this.treeTrunk = document.querySelector(".tree-trunk");
+        this.treeTrunk = document.querySelector("#tree-trunk");
         this.rocket = document.querySelector(".rocket-img");
         this.rocketBody = document.querySelector(".rocket-body-img");
         this.cloud = document.querySelector(".cloud1-img");
+        this.textAnim = document.querySelector(".text-anim");
+        this.flowerAnim = document.querySelector(".flower-anim");
     }
 
     init() {
-        this.placeTreeTrunk();
+        console.log(this.treeTrunk);
+
         // Ugly Part.. Chrome/Opera strangely choose to load image or not without this.
         this.rocket.style.display = 'block';
         this.rocketBody.style.display = 'block';
         this.cloud.style.display = 'block';
+        this.treeHead.style.display = 'block';
+        this.textAnim.style.display = 'inline';
+        this.flowerAnim.style.display = 'inline';
+        
+        this.placeTreeTrunk();
+
     }
 
     getWidth(elt) {

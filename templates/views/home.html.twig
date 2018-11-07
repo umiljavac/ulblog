@@ -3,12 +3,13 @@
 {% block stylesheets %}
     {{ parent() }}
     <link rel="stylesheet" type="text/css" media="screen" href="{{ asset('css/home.css') }}" />
+
 {% endblock %}
 {% block header %}
     <header class="home-header">
         <div class="sky-area"></div>
         <div class="sand-area"></div>
-        <div class="tree-trunk"></div>
+        <div id="tree-trunk"></div>
 
         <div class="tree-head">
             <img class="img-sized text-anim" src="{{ asset('images/coresite/agileCodeTxt.png') }}" alt="text image" />
