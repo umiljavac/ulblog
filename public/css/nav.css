@@ -31,13 +31,13 @@ font-family: 'Days One', sans-serif;
 
 @media (min-width: 768px) {
     .navbar-nav > li > a:hover {
-        animation: scaleLogo 0.4s linear forwards;
+        animation: scaleLogo 0.2s linear forwards;
     }
 }
 
 @media (max-width: 768px) {
     .img-nav:hover {
-        animation: scaleLogo 0.4s linear forwards;
+        animation: scaleLogo 0.2s linear forwards;
     }
 }
 
