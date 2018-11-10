@@ -43,6 +43,11 @@ class Project
     private $submited;
 
     /**
+     * @ORM\Column(type="boolean")
+     */
+    private $forward;
+
+    /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $github;
@@ -143,7 +148,7 @@ class Project
         return $this;
     }
 
-    public function getSubmited(): ?bool
+    public function isSubmited(): ?bool
     {
         return $this->submited;
     }
@@ -154,6 +159,24 @@ class Project
 
         return $this;
     }
+
+    /**
+     * @return mixed
+     */
+    public function isForward()
+    {
+        return $this->forward;
+    }
+
+    /**
+     * @param mixed $forward
+     */
+    public function setForward($forward): void
+    {
+        $this->forward = $forward;
+    }
+
+
 
     public function getGithub(): ?string
     {
