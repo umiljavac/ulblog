@@ -8,6 +8,7 @@ easy_admin:
                     - 'shortDescription'
                     - 'gitHub'
                     - 'submited'
+                    - 'forward'
                     - 'content'
                     - { property: 'mainImageFile', type: 'vich_image' }
                     - 'mainImageAlt'
@@ -22,6 +23,7 @@ easy_admin:
                 fields:
                     - 'title'
                     - 'submited'
+                    - 'forward'
                     - { property: 'mainImage', type: 'image', base_path: '%app.path.project_images%'}
 
             show:

@@ -19,7 +19,8 @@ font-family: 'Days One', sans-serif;
 }
 
 .navbar-toggle {
-    padding: 6px 10px !important;
+    padding: 6px 4px !important;
+    right: -6px;
 }
 
 .navbar-nav > li > a {
@@ -39,14 +40,19 @@ font-family: 'Days One', sans-serif;
     .img-nav:hover {
         animation: scaleLogo 0.2s linear forwards;
     }
+
+    #bs-um-navbar-collapse-1 {
+        position: absolute;
+        width: 60px;
+        right: 15px;
+        background-color: #f8f8f8;
+        border-radius: 0 0 10px 10px;
+    }
 }
 
 .img-nav {
     width: 30px;
     height: 30px;
-}
-
-.img-nav:hover {
 }
 
 @keyframes rotateLogo {
@@ -66,6 +72,19 @@ font-family: 'Days One', sans-serif;
         transform: scale(1.4);
     }
 }
+
+@keyframes animMenu {
+    from {
+        right: -100px;
+    }
+
+    to {
+        right: 27px;
+    }
+
+}
+
+
 
 
 

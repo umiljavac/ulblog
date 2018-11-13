@@ -84,7 +84,7 @@
 .cloud1-div {
     position: absolute;
     z-index: 1;
-    right: -10%;
+    right: 0;
     top: 5vh;
     animation: 30s linear infinite alternate animCloud;
     -webkit-animation: 30s linear infinite alternate animCloud;
@@ -346,7 +346,7 @@
 
 @keyframes animCloud {
     from {
-        right: -10%;
+        right: 0;
     }
     to {
         right: 102%;
@@ -355,7 +355,7 @@
 
 @-webkit-keyframes animCloud {
     from {
-        right: -10%;
+        right: 0;
     }
     to {
         right: 102%;
