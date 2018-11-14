@@ -22,6 +22,7 @@ easy_admin:
                 actions: ['show']
                 fields:
                     - 'title'
+                    - 'category'
                     - 'submited'
                     - 'forward'
                     - { property: 'mainImage', type: 'image', base_path: '%app.path.project_images%'}
