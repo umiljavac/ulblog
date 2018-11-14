@@ -10,18 +10,15 @@ namespace App\Controller;
 
 
 use App\Entity\Category;
-use App\Service\EntityManager\CategoryManager;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 class CategoryController extends Controller
 {
     /**
-     * @Route("/blog/{name}", name="projects-by-cat")
+     * @Route("/{name}", name="projects-by-cat")
      */
-    public function showAction(Category $category, CategoryManager $categoryManager)
+    public function showAction(Category $category)
     {
         if($category) {
             return $this->render('views/'. $category->getName(). '.html.twig',
