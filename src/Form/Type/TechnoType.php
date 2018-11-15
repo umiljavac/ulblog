@@ -36,5 +36,4 @@ class TechnoType extends AbstractType
             'data_class' => Project::class
         ));
     }
-
 }

@@ -2,6 +2,57 @@
 
 {% block stylesheets %}
     {{ parent() }}
-    <link rel="stylesheet" type="text/css" media="screen" href="{{ asset('css/home.css') }}" />
+    <link rel="stylesheet" type="text/css" media="screen" href="{{ asset('css/projects.css') }}" />
 
+{% endblock %}
+{% block header %}
+    <div class="container">
+        <div class="projects-header">
+            <img class="img-project-icon" src="{{ asset('images/coresite/project128Colored.png') }}" alt="project icon" />
+        </div>
+    </div>
+{% endblock %}
+{% block body %}
+    <div class="container">
+        <div class="col-sm-12">
+            <div class="project-title-div">
+                <h4>{{ project.title }}</h4>
+            </div>
+            <div class="row tags">
+                <img class="img-project-tag" src="{{ asset('images/coresite/project128Colored.png') }}" alt="project icon" />
+                {% for tag in project.tags %}
+                    <span class="tag {{ tag.cssClass }}">{{ tag.name }}</span>
+                {% endfor %}
+            </div>
+            <div class="row technos-project-detail">
+                {% for techno in project.technos %}
+                    <span class="techno {{ techno.cssClass }}">{{ techno.name }}</span>
+                {% endfor %}
+            </div>
+            <div class="project-details-img-div ">
+                <img class="img-responsive img-with-border" src="{{ asset('images/projects/' ~ project.mainImage) }}" alt="{{ project.mainImageAlt }}"/>
+            </div>
+        </div>
+        {% if project.images %}
+            <div class="col-sm-12 arrow-container">
+                <div class="slideshow-container">
+                    <div class="slideshow ">
+                        {% for image in project.images %}
+                            {% if image.description|lower == 'vue laptop' %}
+                                <div class="slide-elt project-details-img-div">
+                                    <div class="inner-slide-elt">
+                                        <img class="img-responsive img-with-border" src="{{ asset('images/projects/' ~ image.image)}}" alt="{{ image.alt }}" />
+                                    </div>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('js/slideshow.js') }}"></script>
 {% endblock %}

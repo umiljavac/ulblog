@@ -18,5 +18,4 @@ class CategoryManager
     {
         $this->em = $em;
     }
-
 }

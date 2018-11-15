@@ -24,5 +24,4 @@ class ProjectManager
     {
         return $this->em->getRepository(Project::class)->findAll();
     }
-
 }

@@ -8,7 +8,7 @@
 {% block header %}
     <div class="container">
         <div class="projects-header">
-            <h1 class="projects-title">PROJETS</h1>
+            <img class="img-project-icon" src="{{ asset('images/coresite/project128Colored.png') }}" alt="project icon" />
         </div>
     </div>
 {% endblock %}
@@ -27,7 +27,7 @@
                         {% endfor %}
                     </div>
                     <div class="project-img-div ">
-                        <img class="img-responsive" src="{{ asset('images/projects/' ~ project.mainImage) }}" alt="{{ project.mainImageAlt }}"/>
+                        <img class="img-responsive img-with-border" src="{{ asset('images/projects/' ~ project.mainImage) }}" alt="{{ project.mainImageAlt }}"/>
                     </div>
                     <div class="row technos">
                         {% for techno in project.technos %}
@@ -39,3 +39,4 @@
         {% endfor %}
     </div>
 {% endblock %}
+
