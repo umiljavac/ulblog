@@ -14,6 +14,7 @@ class Slideshow {
         this.setSlideshowWidth();
         this.setSlideEltWidthAndPadding();
         this.buildNavigation();
+        this.hideOrShowArrowNav();
     }
 
     setSlideshowWidth() {
@@ -35,20 +36,22 @@ class Slideshow {
     }
 
     buildNavigation() {
-      const leftArrow = this.buildDiv('left-arrow');
-      const rightArrow = this.buildDiv('right-arrow');
+      this.leftArrow = this.buildDiv('left-arrow');
+      this.rightArrow = this.buildDiv('right-arrow');
       const arrowContainer = document.querySelector('.arrow-container');
-      arrowContainer.appendChild(leftArrow);
-      arrowContainer.appendChild(rightArrow);
-      leftArrow.addEventListener('click', this.prev.bind(this));
-      rightArrow.addEventListener('click', this.next.bind(this));
+      arrowContainer.appendChild(this.leftArrow);
+      arrowContainer.appendChild(this.rightArrow);
+      this.leftArrow.addEventListener('click', this.prev.bind(this));
+      this.rightArrow.addEventListener('click', this.next.bind(this));
     }
 
     next() {
+        console.log(this.currentIndex);
         this.moveTo(this.currentIndex + this.slidesVue);
     }
 
     prev() {
+        console.log(this.currentIndex);
         this.moveTo(this.currentIndex - this.slidesVue);
     }
 
@@ -56,6 +59,23 @@ class Slideshow {
         let translateOnX = index * - 100 / this.slideElts.length;
         this.slideshow.style.transform = "translateX(" + translateOnX + "%)";
         this.currentIndex = index;
+        this.hideOrShowArrowNav();
+    }
+
+    hideOrShowArrowNav() {
+        if (this.slidesVue === this.slideElts.length) {
+            this.leftArrow.style.display = 'none';
+            this.rightArrow.style.display = 'none';
+        } else if (this.currentIndex === 0 && this.slidesVue < this.slideElts.length) {
+            this.leftArrow.style.display = 'none';
+            this.rightArrow.style.display = 'block'
+        } else if (this.currentIndex === this.slideElts.length || this.currentIndex + this.slidesVue >= this.slideElts.length) {
+            this.leftArrow.style.display = 'block';
+            this.rightArrow.style.display = 'none';
+        } else {
+            this.leftArrow.style.display = 'block';
+            this.rightArrow.style.display = 'block';
+        }
     }
 }
 
