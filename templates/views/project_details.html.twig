@@ -15,31 +15,56 @@
 {% block body %}
     <div class="container">
         <div class="col-sm-12">
-            <div class="project-title-div">
-                <h4>{{ project.title }}</h4>
-            </div>
-            <div class="row tags">
-                <img class="img-project-tag" src="{{ asset('images/coresite/project128Colored.png') }}" alt="project icon" />
-                {% for tag in project.tags %}
-                    <span class="tag {{ tag.cssClass }}">{{ tag.name }}</span>
-                {% endfor %}
-            </div>
-            <div class="row technos-project-detail">
-                {% for techno in project.technos %}
-                    <span class="techno {{ techno.cssClass }}">{{ techno.name }}</span>
-                {% endfor %}
-            </div>
-            <div class="project-details-img-div ">
-                <img class="img-responsive img-with-border" src="{{ asset('images/projects/' ~ project.mainImage) }}" alt="{{ project.mainImageAlt }}"/>
+            <div class="add-padding">
+                <div class="project-title-div">
+                    <h4>{{ project.title }}</h4>
+                </div>
+                <div class="row tags">
+                    <img class="img-project-tag" src="{{ asset('images/coresite/project128Colored.png') }}" alt="project icon" />
+                    {% for tag in project.tags %}
+                        <span class="tag {{ tag.cssClass }}">{{ tag.name }}</span>
+                    {% endfor %}
+                </div>
+                <div class="row technos-project-detail">
+                    {% for techno in project.technos %}
+                        <span class="techno {{ techno.cssClass }}">{{ techno.name }}</span>
+                    {% endfor %}
+                </div>
+                {% if project.shortDescription %}
+                    <div class="short-desc">
+                        <p>{{ project.shortDescription }}</p>
+                    </div>
+                {% endif %}
+                <div class="project-details-img-div ">
+                    <img class="img-responsive img-with-border" src="{{ asset('images/projects/' ~ project.mainImage) }}" alt="{{ project.mainImageAlt }}"/>
+                </div>
+                <div class="project-content">
+                    {{ project.content }}
+                </div>
             </div>
         </div>
         {% if project.images %}
-            <div class="col-sm-12 arrow-container">
-                <div class="slideshow-container">
-                    <div class="slideshow ">
+            <div class="col-sm-12 laptop-arrow-container">
+                <div class="laptop-slideshow-container">
+                    <div class="laptop-slideshow ">
                         {% for image in project.images %}
                             {% if image.description|lower == 'vue laptop' %}
-                                <div class="slide-elt project-details-img-div">
+                                <div class="laptop-slide-elt project-details-img-div">
+                                    <div class="inner-slide-elt">
+                                        <img class="img-responsive img-with-border" src="{{ asset('images/projects/' ~ image.image)}}" alt="{{ image.alt }}" />
+                                    </div>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 mobile-arrow-container">
+                <div class="mobile-slideshow-container">
+                    <div class="mobile-slideshow ">
+                        {% for image in project.images %}
+                            {% if image.description|lower == 'vue mobile' %}
+                                <div class="mobile-slide-elt project-details-img-div">
                                     <div class="inner-slide-elt">
                                         <img class="img-responsive img-with-border" src="{{ asset('images/projects/' ~ image.image)}}" alt="{{ image.alt }}" />
                                     </div>
