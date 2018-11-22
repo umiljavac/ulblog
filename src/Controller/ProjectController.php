@@ -35,16 +35,18 @@ class ProjectController extends Controller
     }
 
     /**
-     * @Route("/projects/{id}", name="project-show")
+     * @Route("/projects/{category}/{id}", name="project-show")
      *
+     * @param Category $category
      * @param Project $project
+     *
      *
      * @return \Symfony\Component\HttpFoundation\Response
      */
     public function showAction(Project $project)
     {
         if($project) {
-            return $this->render('work_details.html.twig',
+            return $this->render('views/work_details.html.twig',
                 [
                     'project' => $project
                 ]
