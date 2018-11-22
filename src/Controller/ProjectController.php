@@ -44,7 +44,7 @@ class ProjectController extends Controller
     public function showAction(Project $project)
     {
         if($project) {
-            return $this->render('views/project_details.html.twig',
+            return $this->render('work_details.html.twig',
                 [
                     'project' => $project
                 ]

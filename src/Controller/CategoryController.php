@@ -16,7 +16,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class CategoryController extends Controller
 {
     /**
-     * @Route("/{name}", name="projects-by-cat")
+     * @Route("/projects/{name}", name="projects-by-cat")
      */
     public function showAction(Category $category)
     {
